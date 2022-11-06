@@ -6,7 +6,7 @@ export default function CharacterCard({ card }) {
     return (
       <article className='flex flex-1 grow w-full h-[220px] rounded-md overflow-hidden bg-gray-700 text-white'>
         <div className='w-1/3 relative'>
-          <Image src={image} layout='fill' objectFit='cover' />
+          <Image src={image} alt={name} layout='fill' objectFit='cover' />
         </div>
         <div className='py-2 ml-2'>
           <div>
