@@ -1,0 +1,7 @@
+.wrapper {
+  height: calc(50vh - 60px);
+}
+
+.hero {
+  fill: rgb(245, 245, 245);
+}
