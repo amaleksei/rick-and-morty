@@ -4,6 +4,7 @@ import styles from '../../styles/Home.module.css'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import HeroSection from '../components/HeroSection'
+import Characters from '../components/Character-Cards'
 
 export async function getStaticProps() {
   const mainMenu = [
@@ -16,12 +17,15 @@ export async function getStaticProps() {
       url: '/about',
     },
   ]
+  const charactersRes = await fetch('https://rickandmortyapi.com/api/character')
+  const characters = await charactersRes.json()
+
   return {
-    props: { mainMenu }, // will be passed to the page component as props
+    props: { mainMenu, characters }, // will be passed to the page component as props
   }
 }
 
-function Home({ mainMenu }) {
+function Home({ mainMenu, characters }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -31,7 +35,7 @@ function Home({ mainMenu }) {
       </Head>
       <Header mainMenu={mainMenu} />
       <HeroSection />
-      <main className={styles.main} />
+      <Characters characters={characters} />
       <Footer />
     </div>
   )
