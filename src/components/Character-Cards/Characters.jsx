@@ -1,5 +1,5 @@
-import CharacterCard from './Character-Card'
 import { v4 as uuidv4 } from 'uuid'
+import CharacterCard from './Character-Card'
 
 export default function Characters({ characters }) {
   const { results } = characters
